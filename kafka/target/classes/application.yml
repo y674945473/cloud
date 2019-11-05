@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: kafka-server
+  kafka:
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: 118.190.97.96:9092
+    consumer:
+      bootstrap-servers: 118.190.97.96:9092
+      group-id: foo
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+server:
+  port: 8102
+eureka:
+  enable-self-preservation: false # 设置为false表示关闭保护模式
+  eviction-interval-timer-in-ms: 60000 # 设置清理的间隔时间，而后这个时间使用的是毫秒单位（默认是60秒）
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    instance-id: kafka  # 在信息列表时显示主机名称
+    prefer-ip-address: true
