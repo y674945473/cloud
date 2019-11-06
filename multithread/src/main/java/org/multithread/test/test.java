@@ -13,7 +13,7 @@ import org.multithread.producer.Producer;
 public class test {
 
 	public static void main(String[] args) throws InterruptedException {
-        // 声明一个容量为10的缓存队列
+        // 声明一个容量为10的缓存队列 LinkedBlockingQueue基于链表式的队列
         BlockingQueue<String> queue = new LinkedBlockingQueue<String>(10);
  
         //new了三个生产者和一个消费者
@@ -22,7 +22,7 @@ public class test {
         Producer producer3 = new Producer(queue);
         Consumer consumer = new Consumer(queue);
  
-        // 借助Executors
+        // 借助Executors 线程池
         ExecutorService service = Executors.newCachedThreadPool();
         // 启动线程
         service.execute(producer1);

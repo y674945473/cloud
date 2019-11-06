@@ -1,6 +1,21 @@
 spring:
   application:
     name: quarzt-server
+    datasource:
+    url: jdbc:mysql://118.190.97.96:3306/quartz
+    username: 
+    password: 
+    tomcat:
+      initialSize: 20
+      maxActive: 100
+      maxIdle: 100
+      minIdle: 20
+      maxWait: 10000
+      testWhileIdle: true
+      testOnBorrow: false
+logging:
+  level:
+    cn.study.service: DEBUG
 server:
   port: 8102
 eureka:
