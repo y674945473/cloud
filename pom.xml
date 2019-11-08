@@ -8,9 +8,9 @@
   <modules>
     <module>kafka</module>
     <module>eureka</module>
-    <module>zuul</module>
     <module>quarzt</module>
     <module>multithread</module>
+    <module>getway</module>
   </modules>
   <dependencyManagement>
         <dependencies>
@@ -41,24 +41,15 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-        
-        <plugins>
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <delimiters>
-                        <delimiter>$</delimiter>
-                    </delimiters>
-                </configuration>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
         </plugin>
-        </plugins>
-    </build>
+    </plugins>
+</build>
 </project>

@@ -34,7 +34,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>    <!-- 设置程序执行的主类 -->
-                    <mainClass>com.yltx.spring-cloud.EurekaApplication</mainClass>
+                    <mainClass>org.eureka.EurekaApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
