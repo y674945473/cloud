@@ -12,7 +12,7 @@ public class JobEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;          //job名称
-    private String group;         //job组名
+    private String jobGroup;         //job组名
     private String cron;          //执行的cron
     private String parameter;     //job的参数
     private String description;   //job描述信息
@@ -35,13 +35,14 @@ public class JobEntity implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public String getGroup() {
-        return group;
-    }
-    public void setGroup(String group) {
-        this.group = group;
-    }
-    public String getCron() {
+    
+    public String getJobGroup() {
+		return jobGroup;
+	}
+	public void setJobGroup(String jobGroup) {
+		this.jobGroup = jobGroup;
+	}
+	public String getCron() {
         return cron;
     }
     public void setCron(String cron) {
@@ -82,7 +83,7 @@ public class JobEntity implements Serializable {
         return "JobEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", group='" + group + '\'' +
+                ", group='" + jobGroup + '\'' +
                 ", cron='" + cron + '\'' +
                 ", parameter='" + parameter + '\'' +
                 ", description='" + description + '\'' +
@@ -95,7 +96,7 @@ public class JobEntity implements Serializable {
     public JobEntity(Builder builder) {
         id = builder.id;
         name = builder.name;
-        group = builder.group;
+        jobGroup = builder.group;
         cron = builder.cron;
         parameter = builder.parameter;
         description = builder.description;

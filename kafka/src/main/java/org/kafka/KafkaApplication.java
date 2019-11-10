@@ -1,14 +1,10 @@
 package org.kafka;
 
-import org.kafka.producter.KafkaSender;
-import org.kafka.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.scheduling.annotation.Scheduled;
 
 /**
  * Hello world!
@@ -18,19 +14,28 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableEurekaClient
 public class KafkaApplication 
 {
-	@Autowired
-	KafkaSender kafkaSender;
-	@Autowired
-	KafkaConsumer kafkaConsumer;
+//	@Autowired
+//	KafkaSender kafkaSender;
+//	@Autowired
+//	KafkaConsumer kafkaConsumer;
 	private static Logger Logger = LoggerFactory.getLogger(KafkaApplication.class);
     public static void main( String[] args )
     {
-    	SpringApplication.run(KafkaApplication.class, args);
+    	 SpringApplication.run(KafkaApplication.class, args);
     	Logger.info("------kafka服务启动成功------------");
+    	//ConfigurableApplicationContext context =
+//    	KafkaSender sender = context.getBean(KafkaSender.class);
+//
+//        for (int i = 0; i < 3; i++) {
+//            //调用消息发送类中的消息发送方法
+//            sender.sendTest();
+//
+//            try {
+//                Thread.sleep(3000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
     
-    @Scheduled(cron = "0/2 * * * * ? ")
-    public void sendMsg(){
-      kafkaSender.sendTest();
-    }
 }

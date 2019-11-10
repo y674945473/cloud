@@ -8,9 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaConsumer {
 
-	private static Logger Logger = LoggerFactory.getLogger(KafkaConsumer.class);
-	@KafkaListener(topics = {"hello"})
-    public void consumer(String message) {
-		Logger.info("c1 消费了hello topic messge:{}", message);
+	private static Logger log = LoggerFactory.getLogger(KafkaConsumer.class);
+	
+	@KafkaListener(topics = {"topic-order"})
+    public void consumer(String data) {
+        log.info("+++++++++++++++++++++  message = {}", data);
     }
 }

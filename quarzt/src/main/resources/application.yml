@@ -1,3 +1,5 @@
+quartz:
+  enabled: true
 spring:
   application:
     name: quarzt-server
